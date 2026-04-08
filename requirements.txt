@@ -10,3 +10,4 @@ uvicorn[standard]>=0.24.0
 # HuggingFace + OpenAI-compat client (for inference.py + baseline.py)
 openai>=1.0.0
 huggingface_hub>=0.23.0
+openenv-core>=0.2.0

@@ -60,7 +60,7 @@ def test_task_2_smart():
 
 def test_task_2_rule_based():
     """Test using the same rule-based agent from inference.py"""
-    from models import Observation
+    from server.models import Observation
     env = SupplyChainEnv(task_id=2, seed=42)
     
     HORIZON = 5
