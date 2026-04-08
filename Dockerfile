@@ -12,12 +12,12 @@ COPY --chown=user requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy project files
-COPY --chown=user models.py .
-COPY --chown=user environment.py .
-COPY --chown=user app.py .
+COPY --chown=user server/ ./server/
 COPY --chown=user baseline.py .
 COPY --chown=user inference.py .
 COPY --chown=user openenv.yaml .
+COPY --chown=user pyproject.toml .
+COPY --chown=user uv.lock .
 
 # HuggingFace token will be injected via Space Secrets at runtime
 ENV API_BASE_URL="https://router.huggingface.co/v1"
@@ -30,4 +30,4 @@ LABEL org.opencontainers.image.description="OpenEnv RL benchmark — LLM plannin
 LABEL space_sdk="docker"
 
 # Serve FastAPI app + dashboard on port 7860
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "7860"]
+CMD ["uvicorn", "server.app:app", "--host", "0.0.0.0", "--port", "7860"]
