@@ -1,8 +1,8 @@
 """
 Score validation script - checks if scores are mathematically achievable for all 3 tasks.
 """
-from environment import SupplyChainEnv
-from models import Action, Transfer
+from server.environment import SupplyChainEnv
+from server.models import Action, Transfer
 
 def test_task_1():
     env = SupplyChainEnv(task_id=1, seed=42)

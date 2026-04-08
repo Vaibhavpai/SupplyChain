@@ -8,7 +8,7 @@ Run with:  pytest tests/test_models.py -v
 import pytest
 from pydantic import ValidationError
 
-from models import (
+from server.models import (
     Action,
     DemandForecast,
     IncomingShipment,

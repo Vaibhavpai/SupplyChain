@@ -12,7 +12,7 @@ import copy
 import random
 from typing import Any
 
-from models import (
+from server.models import (
     Action,
     DemandForecast,
     IncomingShipment,
@@ -382,7 +382,7 @@ class SupplyChainEnv:
           7. Temporal incentive: bonus for early intervention (higher on earlier days)
           8. Penalties: -50.0 for invalid actions, -10.0 for safety violations
         """
-        from models import ProcessSupervisionReward
+        from server.models import ProcessSupervisionReward
 
         s = self._internal_state
 

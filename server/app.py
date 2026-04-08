@@ -22,8 +22,8 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 
-from environment import SupplyChainEnv
-from models import Action, StepResult
+from server.environment import SupplyChainEnv
+from server.models import Action, StepResult
 
 # ---------------------------------------------------------------------------
 # Global state
@@ -781,3 +781,8 @@ async function doReset(){
 def dashboard():
     """Serve the interactive control dashboard."""
     return HTMLResponse(content=DASHBOARD_HTML)
+
+def run():
+    import uvicorn
+    uvicorn.run("server.app:app", host="0.0.0.0", port=8000)
+

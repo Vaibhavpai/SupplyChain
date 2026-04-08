@@ -20,8 +20,8 @@ from typing import Optional
 
 from huggingface_hub import InferenceClient
 
-from environment import SupplyChainEnv
-from models import Action, Observation, Transfer
+from server.environment import SupplyChainEnv
+from server.models import Action, Observation, Transfer
 
 # ---------------------------------------------------------------------------
 # Configuration

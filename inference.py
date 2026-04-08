@@ -16,8 +16,8 @@ from typing import List, Optional
 # ✅ RULE 2: Use the OpenAI SDK
 from openai import OpenAI
 
-from environment import SupplyChainEnv
-from models import Action, Observation, Transfer
+from server.environment import SupplyChainEnv
+from server.models import Action, Observation, Transfer
 
 # ---------------------------------------------------------------------------
 # Configuration (via environment variables)
