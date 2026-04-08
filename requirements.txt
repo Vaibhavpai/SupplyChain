@@ -1,0 +1,12 @@
+# Core environment
+pydantic>=2.0
+pyyaml
+pytest
+
+# API server + dashboard
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# HuggingFace + OpenAI-compat client (for inference.py + baseline.py)
+openai>=1.0.0
+huggingface_hub>=0.23.0
