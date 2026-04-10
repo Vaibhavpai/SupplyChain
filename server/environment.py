@@ -657,7 +657,7 @@ class SupplyChainEnv:
         """
         s = self._internal_state
         transferred: int = s.get("task1_transferred", 0)
-        score: float = 1.0 if transferred >= 50 else 0.0
+        score: float = 0.99 if transferred >= 50 else 0.01
         return {"score": score, "transferred": transferred}
 
     def grade_task_2(self) -> dict[str, Any]:
@@ -686,7 +686,7 @@ class SupplyChainEnv:
 
         cost_excess = max(0.0, actual_total_cost - BASELINE_OPTIMAL_COST)
         score = 1.0 - (0.025 * stockout_days) - (0.02 * (cost_excess / 100.0))
-        score = max(0.0, min(1.0, score))
+        score = max(0.01, min(0.99, score))
 
         return {
             "score":        score,
@@ -729,7 +729,7 @@ class SupplyChainEnv:
         cost_penalty: float = min(0.15, total_costs / 10000.0)
 
         score = fulfillment_rate - cost_penalty
-        score = max(0.0, min(1.0, score))
+        score = max(0.01, min(0.99, score))
 
         return {
             "score":            score,

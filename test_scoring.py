@@ -12,11 +12,11 @@ def test_task_1():
     env.step(action)
     grade = env.grade_task_1()
     print(f"\n{'='*60}")
-    print(f" TASK 1: Simple Restock (threshold=1.0)")
+    print(f" TASK 1: Simple Restock (threshold=0.99)")
     print(f"{'='*60}")
     print(f"  transferred: {grade['transferred']}")
     print(f"  score: {grade['score']:.4f}")
-    print(f"  result: {'PASS' if grade['score'] >= 1.0 else 'FAIL'}")
+    print(f"  result: {'PASS' if grade['score'] >= 0.99 else 'FAIL'}")
     return grade['score']
 
 def test_task_2_do_nothing():
@@ -214,7 +214,7 @@ if __name__ == "__main__":
     print(f"\n{'='*60}")
     print(f" SUMMARY")
     print(f"{'='*60}")
-    print(f"  Task 1 (transfer 50): {s1:.4f} {'PASS' if s1 >= 1.0 else 'FAIL'}")
+    print(f"  Task 1 (transfer 50): {s1:.4f} {'PASS' if s1 >= 0.99 else 'FAIL'}")
     print(f"  Task 2 do-nothing:    {s2_nothing:.4f} {'PASS' if s2_nothing >= 0.7 else 'FAIL'}")
     print(f"  Task 2 smart:         {s2_smart:.4f} {'PASS' if s2_smart >= 0.7 else 'FAIL'}")
     print(f"  Task 2 rule-based:    {s2_rule:.4f} {'PASS' if s2_rule >= 0.7 else 'FAIL'}")

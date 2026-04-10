@@ -43,7 +43,7 @@ TASK_META = {
         "difficulty": "Easy",
         "horizon": 5,
         "max_steps": 5,
-        "success_threshold": 1.0,
+        "success_threshold": 0.99,
         "description": "West warehouse has 0 SKU_A. Transfer ≥50 units from Central before advancing time.",
         "color": "#22c55e",
     },
