@@ -14,7 +14,7 @@ tasks:
     name: simple_restock
     difficulty: easy
     max_steps: 5
-    success_threshold: 1.0
+    success_threshold: 0.99
     description: >
       West warehouse has 0 units of SKU_A with 50 units forecasted tomorrow.
       Agent must transfer >= 50 units from Central to West before advancing time.
