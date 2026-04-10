@@ -62,11 +62,10 @@ def log_step(step: int, action: str, reward: float, done: bool, error: Optional[
         flush=True,
     )
 
-def log_end(success: bool, steps: int, rewards: List[float]) -> None:
+def log_end(success: bool, score: float, steps: int, rewards: List[float]) -> None:
     rewards_str = ",".join(f"{r:.2f}" for r in rewards)
-    # ✅ RULE 4: Removed 'score' to match exact required format
     print(
-        f"[END] success={str(success).lower()} steps={steps} rewards={rewards_str}",
+        f"[END] success={str(success).lower()} score={score:.4f} steps={steps} rewards={rewards_str}",
         flush=True,
     )
 
@@ -253,8 +252,7 @@ def run_task(task_config: dict) -> dict:
     except Exception as exc:
         print(f"[DEBUG] Exception during task {task_name}: {exc}", flush=True)
     finally:
-        # ✅ RULE 4: Exact format
-        log_end(success=success, steps=steps_taken, rewards=rewards)
+        log_end(success=success, score=score, steps=steps_taken, rewards=rewards)
     return {"task": task_name, "score": score, "steps": steps_taken, "success": success}
 
 # ---------------------------------------------------------------------------
